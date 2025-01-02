@@ -13,8 +13,6 @@ class SignUpSerializer(serializers.ModelSerializer):
 
     def create(self , validated_data):
 
-        print(" validated data " , validated_data)
-
         if validate_password(validated_data['password']) == None:
             password = make_password(validated_data['password'])
 
